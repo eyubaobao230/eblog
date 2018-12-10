@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	关于我
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/about.css">
+{% endblock %}
+
+{% block content %}
+	<div class="nav">
+		<div class="nav_c">
+			<div class="nav_c_logo"><a href="{% url 'showblog:e_blog' %}">小鄂的博客</a></div>
+			<div class="nav_c_content">
+				<li><a href="{% url 'showblog:e_blog' %}">博客首页</a></li>
+			</div>
+		</div>
+	</div>
+	<div class="content">
+		<div class="block"></div>
+		<div class="mes">
+			<a href=""><img src="/static/image/ouwen.gif" alt=""></a>
+			<p>
+				没什么好说的~~~
+			</p>
+		</div>
+		<div class="call">
+			<img src="/static/image/qq(1).jpg" alt="">
+			<img src="/static/image/qq(2).jpg" alt="">
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    小鄂的博客
+{% endblock %}
+
+{% block css %}
+	<link rel="stylesheet" href="/static/css/edit.css">
+{% endblock %}
+
+{% block content %}
+	<div class="nav">
+	<div class="nav_c">
+		<div class="nav_c_logo"><a href="">小鄂的博客</a></div>
+		<div class="nav_c_content">
+			<li><a href="{% url 'showblog:e_blog' %}">博客首页</a></li>
+			<li><a href="{% url 'showblog:about' %}">关于我</a></li>
+			<li><a href="{% url 'editblog:login' %}">后台管理</a></li>
+			<li>
+				<input type="text" placeholder="搜索"/>
+				<input type="button" value="搜索"/>
+			</li>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div class="main">
+		<table>
+			<tbody>
+				{% for art in page %}
+				<tr class="content">
+					<td class="content_1">
+						<a href="{% url 'showblog:e_content' art.id %}">
+							<img src="/media/{{ art.icon }}" alt="没有上传图片耶" class="icon">
+							<h3 class="title">{{ art.title }}</h3>
+							<p class="desc">&emsp;&emsp;{{ art.desc }}</p>
+						</a>
+					</td>
+					<td class="content_2">
+						<p><a href="{% url 'editblog:edit_art' art.id %}">修改文章</a></p>
+						<p><a href="{% url 'editblog:add_article' %}">增加文章</a></p>
+						<p><a href="{% url 'editblog:del_art' art.id %}">删除文章</a></p>
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<div class="page">
+		<p>
+			共{{ page.paginator.num_pages }}页，
+			当前{{ page.number }}页，
+			共{{ page.paginator.count }}条数据
+
+			{% if page.has_previous %}
+				<a href="{% url 'editblog:edit' %}?page={{ page.previous_page_number }}">上一页</a>
+			{% endif %}
+
+			{% for i in page.paginator.page_range %}
+				<a href="{% url 'editblog:edit' %}?page={{ i }}">{{ i }}</a>
+			{% endfor %}
+
+			{% if page.has_next %}
+				<a href="{% url 'editblog:edit' %}?page={{ page.next_page_number }}">下一页</a>
+			{% endif %}
+
+		</p>
+	</div>
+</div>
+<div class="footer"></div>
+{% endblock %}
+
+
+

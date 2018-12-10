@@ -1,0 +1,105 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../image/fg.gif) no-repeat;
+	background-size:100% 100%;
+	background-attachment:fixed;
+	color: darkgray;
+}
+a{
+	text-decoration: none;
+	color: darkgray;
+}
+
+/* ==========导航栏=========== */
+.nav{
+	height: 50px;
+/* 	background-color: rgba(255,255,255,0.5); */
+}
+.nav .nav_c{
+	width: 1000px;
+	height: 50px;
+	margin: 0 auto;
+	line-height: 50px;
+}
+/* ==========logo左=============== */
+.nav_c_logo{
+	float: left;
+	font-size: 20px;
+	font: "microsoft yahei";
+	border-radius: 10px;
+	margin-left: 100px;
+	background-color: rgba(173,216,230,0.5);
+}
+/* ===========导航栏右边内容============= */
+.nav_c_content{
+	width: 300px;
+	float: right;
+
+}
+.nav_c_content li{
+	list-style: none;
+	text-align: center;
+	float: left;
+	width: 100px;
+	border-radius: 10px;
+	margin-left: 20px;
+	background-color: rgba(173,216,230,0.5);
+
+}
+.nav_c_content li a{
+	color: rgb(242,242,242);
+}
+
+/* ===========内容=========== */
+.content{
+	width: 900px;
+	height: 600px;
+	margin: 0 auto;
+	border-radius: 20px;
+	margin-top: 20px;
+	background-color: rgba(255, 255, 255, 0.5)
+}
+.content .block{
+	height: 20px;
+	width: 20px;
+}
+.content .mes{
+	width: 800px;
+	height: 300px;
+	margin: 0 auto;
+	background-color: rgba(173,216,230, 0.5);
+	padding: 20px;
+	color: red;
+	border-radius: 10px;
+	box-sizing: border-box;
+}
+.content .mes p{
+    color: red;
+}
+.content .mes a{
+	width: 130px;
+	height: 130px;
+}
+.content .mes a img{
+	width: 130px;
+	height: 130px;
+	float: left;
+	margin-right: 20px;
+	border-radius: 10px;
+}
+.content .call{
+	float: right;
+	margin-right: 50px;
+}
+
+
+.content .call img{
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+	margin-left: 20px;
+	margin-top: 20px;
+}
